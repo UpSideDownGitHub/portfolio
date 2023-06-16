@@ -3,8 +3,9 @@ import Tag from '@/components/Tag'
 import { ComponentProps, useState } from 'react'
 import Pagination from '@/components/Pagination'
 import formatDate from '@/lib/utils/formatDate'
-import { CoreContent } from '@/lib/utils/contentlayer'
-import type { Blog } from 'contentlayer/generated'
+import { CoreContent, getAllTags } from '@/lib/utils/contentlayer'
+import { allBlogs, type Blog } from 'contentlayer/generated'
+import kebabCase from '@/lib/utils/kebabCase'
 
 interface Props {
   posts: CoreContent<Blog>[]
@@ -23,7 +24,7 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
   // If initialDisplayPosts exist, display it if no searchValue is specified
   const displayPosts =
     initialDisplayPosts.length > 0 && !searchValue ? initialDisplayPosts : filteredBlogPosts
-
+    
   return (
     <>
       <div className="divide-y">
@@ -40,7 +41,7 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
               className="block w-full rounded-md border border-gray-300 bg-white px-4 py-2 text-gray-900 focus:border-primary-500 focus:ring-primary-500 dark:border-gray-900 dark:bg-gray-800 dark:text-gray-100"
             />
             <svg
-              className="absolute right-3 top-3 h-5 w-5 text-gray-400 dark:text-gray-300"
+              className="absolute right-14 top-3 h-5 w-5 text-gray-400 dark:text-gray-300"
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
@@ -53,8 +54,18 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
                 d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
               />
             </svg>
+            <div className='absolute -right-1 top-2'>
+                <Link
+                  href={`/tags`}
+                  className="mr-3 text-xl text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
+                >
+                  {`Tags`}
+                </Link>
+            </div>
           </div>
-        </div>
+       </div>
+        
+          
         <ul>
           {!filteredBlogPosts.length && 'No posts found.'}
           {displayPosts.map((post) => {
