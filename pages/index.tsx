@@ -7,8 +7,12 @@ import { sortedBlogPost, allCoreContent } from '@/lib/utils/contentlayer'
 import { InferGetStaticPropsType } from 'next'
 import NewsletterForm from '@/components/NewsletterForm'
 import { allBlogs } from 'contentlayer/generated'
+import Image from '@/components/Image'
+import projectsData from '@/data/projectsData'
+import Card from '@/components/Card'
 
-const MAX_DISPLAY = 5
+const MAX_DISPLAY = 3
+const MAX_PROJECTS = 2
 
 export const getStaticProps = async () => {
   // TODO: move computation to get only the essential frontmatter to contentlayer.config
@@ -22,15 +26,72 @@ export default function Home({ posts }: InferGetStaticPropsType<typeof getStatic
   return (
     <>
       <PageSEO title={siteMetadata.title} description={siteMetadata.description} />
+      
       <div className="divide-y divide-gray-200 dark:divide-gray-700">
         <div className="space-y-2 pt-6 pb-8 md:space-y-5">
           <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
-            Latest
+            Introduction
           </h1>
-          <p className="text-lg leading-7 text-gray-500 dark:text-gray-400">
-            {siteMetadata.description}
-          </p>
         </div>
+        
+        <div className='flex pt-10'>
+          <div className='flex-none w-56 relative'>
+            <Image src="/static/images/avatar.png" alt="avatar" width="192px" height="192px" className="h-48 w-48 rounded-full" />
+          </div>
+            <div className="flex-auto p-6 flex flex-wrap">
+              <h1 className="flex-auto text-lg leading-7 text-gray-500 dark:text-gray-400">
+                Hello, i am Reuben Miller
+              </h1>
+            </div>
+        </div>
+        </div>
+
+        <div className="divide-y divide-gray-200 dark:divide-gray-700">
+        
+        <div className="space-y-2 pt-10 pb-8 md:space-y-50">
+          <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
+            Latest Projects
+          </h1>
+        </div>
+        
+
+        <div className="container py-12">
+          <div className="-m-4 flex flex-wrap">
+            {projectsData.slice(0, MAX_PROJECTS).map((d) => (
+              <Card
+                key={d.title}
+                title={d.title}
+                description={d.description}
+                imgSrc={d.imgSrc}
+                href={d.href}
+              />
+            ))}
+          </div>
+        </div>
+        </div>
+        {projectsData.length > MAX_PROJECTS && (
+          <div className="flex justify-end text-base font-medium leading-6">
+            <Link
+              href="/projects"
+              className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
+              aria-label="all projects"
+            >
+              All Projects &rarr;
+            </Link>
+          </div>
+        )}
+
+        
+
+        <div className="divide-y divide-gray-200 dark:divide-gray-700">
+
+        <div className="space-y-2 pt-10 pb-8 md:space-y-50">
+          <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
+            Latest Blog Posts
+          </h1>
+        </div>
+
+        
         <ul className="divide-y divide-gray-200 dark:divide-gray-700">
           {!posts.length && 'No posts found.'}
           {posts.slice(0, MAX_DISPLAY).map((post) => {
@@ -92,11 +153,6 @@ export default function Home({ posts }: InferGetStaticPropsType<typeof getStatic
           >
             All Posts &rarr;
           </Link>
-        </div>
-      )}
-      {siteMetadata.newsletter.provider !== '' && (
-        <div className="flex items-center justify-center pt-4">
-          <NewsletterForm />
         </div>
       )}
     </>
