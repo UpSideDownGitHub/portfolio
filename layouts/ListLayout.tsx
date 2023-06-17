@@ -94,7 +94,8 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
                                     <h2 className="text-2xl font-bold leading-8 tracking-tight">
                                       <Link
                                         href={`/blog/${slug}`}
-                                        className="text-gray-900 transition duration-500 ease-in-out hover:text-primary-500 dark:text-gray-100 dark:hover:text-primary-500"
+                                        className="text-3xl font-extrabold leading-9 tracking-tight inline-block bg-clip-text text-transparent 
+                                        bg-gradient-to-r from-teal-600 via-cyan-300 to-sky-700 sm:text-4xl md:text-4xl md:leading-14"
                                       >
                                         {title}
                                       </Link>
