@@ -23,12 +23,13 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
   // If initialDisplayPosts exist, display it if no searchValue is specified
   const displayPosts =
     initialDisplayPosts.length > 0 && !searchValue ? initialDisplayPosts : filteredBlogPosts
-    
+
   return (
     <>
       <div className="divide-y">
         <div className="space-y-2 pt-6 pb-8 md:space-y-5">
-          <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
+          <h1 className="text-3xl font-extrabold leading-9 tracking-tight inline-block bg-clip-text text-transparent 
+        bg-gradient-to-r from-teal-600 via-cyan-300 to-sky-700 sm:text-4xl md:text-6xl md:leading-14">
             {title}
           </h1>
           <div className="relative max-w-lg">
@@ -53,50 +54,70 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
                 d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
               />
             </svg>
-            <div className='absolute -right-1 top-2'>
-                <Link
-                  href={`/tags`}
-                  className="mr-3 text-xl text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
-                >
-                  {`Tags`}
-                </Link>
+            <div className="absolute -right-1 top-2">
+              <Link
+                href={`/tags`}
+                className="mr-3 text-xl text-primary-500 hover:text-primary-600 dark:hover:text-primary-400 "
+              >
+                {`Tags`}
+              </Link>
             </div>
           </div>
-       </div>
-        
-          
+        </div>
+
         <ul>
           {!filteredBlogPosts.length && 'No posts found.'}
-          {displayPosts.map((post) => {
-            const { slug, date, title, summary, tags } = post
+          {displayPosts.map((frontMatter) => {
+            const { slug, date, title, summary, tags } = frontMatter
             return (
-              <li key={slug} className="py-4">
-                <article className="space-y-2 xl:grid xl:grid-cols-4 xl:items-baseline xl:space-y-0">
-                  <dl>
-                    <dt className="sr-only">Published on</dt>
-                    <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
-                      <time dateTime={date}>{formatDate(date)}</time>
-                    </dd>
-                  </dl>
-                  <div className="space-y-3 xl:col-span-3">
-                    <div>
-                      <h3 className="text-2xl font-bold leading-8 tracking-tight">
-                        <Link href={`/blog/${slug}`} className="text-gray-900 dark:text-gray-100">
-                          {title}
+              <div className="my-10 mx-4 grid items-start gap-10 transition duration-1000 hover:scale-110">
+                <div className="group relative">
+                  <div className="animate-tilt absolute -inset-0.5 rounded-lg bg-gradient-to-r from-teal-600 to-teal-600 opacity-50 blur transition duration-1000 group-hover:opacity-100 group-hover:duration-200"></div>
+                  <span className="relative flex items-center divide-x divide-gray-600 rounded-lg bg-white px-7 py-4 leading-none dark:bg-black">
+                    <span className="flex items-center space-x-5">
+                      <div className="flex">
+                        <Link
+                          href={`/blog/${slug}`}
+                          key={slug}
+                          className="group bg-opacity-1 flex bg-transparent px-2"
+                        >
+                          <li key={slug} className="py-6">
+                            <article className=" xl:grid xl:grid-cols-4 xl:items-baseline xl:space-y-3">
+                              <dl>
+                                <dd className="text-sm font-normal leading-6 text-gray-500 dark:text-gray-400">
+                                  <time dateTime={date}>{formatDate(date)}</time>
+                                </dd>
+                              </dl>
+                              <div className="space-y-5 xl:col-span-4">
+                                <div className="space-y-1">
+                                  <div>
+                                    <h2 className="text-2xl font-bold leading-8 tracking-tight">
+                                      <Link
+                                        href={`/blog/${slug}`}
+                                        className="text-gray-900 transition duration-500 ease-in-out hover:text-primary-500 dark:text-gray-100 dark:hover:text-primary-500"
+                                      >
+                                        {title}
+                                      </Link>
+                                    </h2>
+                                  </div>
+                                  <div className="flex flex-wrap">
+                                    {tags.map((tag) => (
+                                      <Tag key={tag} text={tag} />
+                                    ))}
+                                  </div>
+                                  <div className="prose max-w-none pt-5 text-gray-500 dark:text-gray-400">
+                                    {summary}
+                                  </div>
+                                </div>
+                              </div>
+                            </article>
+                          </li>
                         </Link>
-                      </h3>
-                      <div className="flex flex-wrap">
-                        {tags.map((tag) => (
-                          <Tag key={tag} text={tag} />
-                        ))}
                       </div>
-                    </div>
-                    <div className="prose max-w-none text-gray-500 dark:text-gray-400">
-                      {summary}
-                    </div>
-                  </div>
-                </article>
-              </li>
+                    </span>
+                  </span>
+                </div>
+              </div>
             )
           })}
         </ul>
