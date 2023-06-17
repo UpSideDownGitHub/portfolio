@@ -7,6 +7,8 @@ import Footer from './Footer'
 import MobileNav from './MobileNav'
 import ThemeSwitch from './ThemeSwitch'
 import { ReactNode } from 'react'
+import LeftDarkGradient from './background/left-dark-gradient.svg'
+import RightDarkGradient from './background/right-dark-gradient.svg'
 
 interface Props {
   children: ReactNode
@@ -50,6 +52,14 @@ const LayoutWrapper = ({ children }: Props) => {
           </div>
         </header>
         <main className="mb-auto">{children}</main>
+
+        <div className="fixed -bottom-11 -left-28 -z-10 h-full w-full opacity-60 sm:-bottom-0 sm:-left-64">
+          <LeftDarkGradient />
+        </div>
+        <div className="fixed -top-96 right-64 -z-10 h-full w-full opacity-60 sm:-right-96">
+          <RightDarkGradient />
+        </div>
+
         <Footer />
       </div>
     </SectionContainer>

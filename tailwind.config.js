@@ -28,6 +28,9 @@ module.exports = {
         13: '3.25rem',
         14: '3.5rem',
       },
+      backgroundImage: {
+        'texture-pattern': "url('/static/images/background.svg')",
+      },
       fontFamily: {
         //@ts-ignore
         sans: ['InterVariable', ...defaultTheme.fontFamily.sans],
@@ -35,6 +38,9 @@ module.exports = {
       colors: {
         primary: colors.teal,
         gray: colors.neutral,
+      },
+      zIndex: {
+        '-1': '-1',
       },
       typography: (theme) => ({
         DEFAULT: {
