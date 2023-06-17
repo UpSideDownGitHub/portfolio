@@ -37,7 +37,7 @@ export default function Home({ posts }: InferGetStaticPropsType<typeof getStatic
         <div className='flex pt-10'>
           <div className='flex-none w-56 relative transition ease-in-out hover:scale-110'>
             <Link href={`/about`} aria-label={`Link to About`}>
-              <Image src="/static/images/avatar.png" alt="avatar" width="192px" height="192px" className="h-48 w-48 rounded-full" />
+              <Image src="/static/images/Face.jpg" alt="avatar" width="192px" height="192px" className="h-48 w-48 rounded-full" />
             </Link> 
           </div>
             <div className="flex-auto p-6 flex flex-wrap">

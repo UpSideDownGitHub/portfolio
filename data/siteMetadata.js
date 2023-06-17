@@ -13,9 +13,10 @@ const siteMetadata = {
   email: 'address@yoursite.com',
   github: 'https://github.com',
   twitter: 'https://twitter.com/Twitter',
-  facebook: 'https://facebook.com',
+  instagram: 'https://instagram.com',
   youtube: 'https://youtube.com',
   linkedin: 'https://www.linkedin.com',
+  itch: 'https://itch.io',
   locale: 'en-US',
   analytics: {
     // If you want to use an analytics provider you have to add it to the
