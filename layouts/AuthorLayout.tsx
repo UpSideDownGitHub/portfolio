@@ -3,6 +3,7 @@ import Image from '@/components/Image'
 import { PageSEO } from '@/components/SEO'
 import { ReactNode } from 'react'
 import type { Authors } from 'contentlayer/generated'
+import SkillIcon from '@/components/skill-icons/index2'
 
 interface Props {
   children: ReactNode
@@ -49,6 +50,8 @@ export default function AuthorLayout({ children, content }: Props) {
             Skills
           </h1>
         </div>
+        <SkillIcon kind="profesonal" size={10} />
+
       </div>
 
       
