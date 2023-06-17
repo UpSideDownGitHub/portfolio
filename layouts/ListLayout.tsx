@@ -3,9 +3,8 @@ import Tag from '@/components/Tag'
 import { ComponentProps, useState } from 'react'
 import Pagination from '@/components/Pagination'
 import formatDate from '@/lib/utils/formatDate'
-import { CoreContent, getAllTags } from '@/lib/utils/contentlayer'
-import { allBlogs, type Blog } from 'contentlayer/generated'
-import kebabCase from '@/lib/utils/kebabCase'
+import { CoreContent } from '@/lib/utils/contentlayer'
+import { type Blog } from 'contentlayer/generated'
 
 interface Props {
   posts: CoreContent<Blog>[]

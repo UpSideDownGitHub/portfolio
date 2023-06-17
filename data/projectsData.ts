@@ -1,19 +1,37 @@
+/*
+0 - profesonal
+1 - personal
+2 - game jam
+3 - university
+*/
 const projectsData = [
   {
-    title: 'A Search Engine',
-    description: `What if you could look up any information in the world? Webpages, images, videos
-    and more. Google has many features to help you find exactly what you're looking
-    for.`,
+    type: 0,
+    title: 'Example Profesonal Project',
+    description: `this is the example description for the project`,
     imgSrc: '/static/images/google.png',
     href: 'https://www.google.com',
   },
   {
-    title: 'The Time Machine',
-    description: `Imagine being able to travel back in time or to the future. Simple turn the knob
-    to the desired date and press "Go". No more worrying about lost keys or
-    forgotten headphones with this simple yet affordable solution.`,
-    imgSrc: '/static/images/time-machine.jpg',
-    href: '/blog/the-time-machine',
+    type: 1,
+    title: 'Example Personal Project',
+    description: `this is the example description for the project`,
+    imgSrc: '/static/images/google.png',
+    href: 'https://www.google.com',
+  },
+  {
+    type: 2,
+    title: 'Example Game Jam Project',
+    description: `this is the example description for the project`,
+    imgSrc: '/static/images/google.png',
+    href: 'https://www.google.com',
+  },
+  {
+    type: 3,
+    title: 'Example University Project',
+    description: `this is the example description for the project`,
+    imgSrc: '/static/images/google.png',
+    href: 'https://www.google.com',
   },
 ]
 
