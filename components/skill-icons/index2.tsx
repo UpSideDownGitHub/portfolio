@@ -17,6 +17,7 @@ import TypeScript from './typescript.svg'
 import Unity from './unity.svg'
 import UnrealEngine from './unreal-engine.svg'
 import VB from './vb.svg'
+import VisualStudio from './visual-studio.svg'
 
 
 const components = {
@@ -39,6 +40,7 @@ const components = {
   unity: Unity,
   unrealEngine: UnrealEngine,
   vb: VB,
+  visualStudio: VisualStudio,
 }
 
 const SkillIcon = ({ kind, size = 8 }) => {

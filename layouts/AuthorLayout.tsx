@@ -44,17 +44,112 @@ export default function AuthorLayout({ children, content }: Props) {
           <div className="prose max-w-none pt-8 pb-8 dark:prose-dark xl:col-span-2">{children}</div>
         </div>
       </div>
+
+      <div className="space-y-2 pt-6 md:space-y-5">
+        <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
+          Skills
+        </h1>
+      </div>
       <div className="divide-y">
+        <div className="flex flex-auto pb-5">
+          <SkillIcon kind="beginner" size={10} />
+          <div className="pl-2 pr-5 pt-2 dark:prose-dark flex-auto">Beginner</div>
+          <SkillIcon kind="intermediate" size={10} />
+          <div className="pl-2 pr-5 pt-2 dark:prose-dark flex-auto">Intermediate</div>
+          <SkillIcon kind="proficent" size={10} />
+          <div className="pl-2 pr-5 pt-2 dark:prose-dark flex-auto">Proficient</div>
+          <SkillIcon kind="advanced" size={10} />
+          <div className="pl-2 pr-5 pt-2 dark:prose-dark flex-auto">Advanced</div>
+          <SkillIcon kind="profesonal" size={10} />
+          <div className="pl-2 pr-5 pt-2 dark:prose-dark flex-auto">Professional</div>
+        </div>
+
         <div className="space-y-2 pt-6 pb-8 md:space-y-5">
-          <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
-            Skills
+          <h1 className="text-xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-xl sm:leading-10 md:text-4xl md:leading-14">
+            Languages
           </h1>
         </div>
-        <SkillIcon kind="profesonal" size={10} />
+        <div className="flex flex-wrap pt-5 ">
+        <div className="flex px-5 pb-4 transition ease-in-out hover:scale-110">
+            <SkillIcon kind="cSharp" size={10} />
+            <div className="pl-2 pr-2 pt-2 dark:prose-dark ">C#</div>
+            <SkillIcon kind="advanced" size={10} />
+          </div>
+          <div className="flex px-5 pb-4 transition ease-in-out hover:scale-110">
+            <SkillIcon kind="cPlusPlus" size={10} />
+            <div className="pl-2 pr-2 pt-2 dark:prose-dark">C++</div>
+            <SkillIcon kind="proficent" size={10} />
+          </div>
+          <div className="flex px-5 pb-4 transition ease-in-out hover:scale-110">
+            <SkillIcon kind="java" size={10} />
+            <div className="pl-2 pr-2 pt-2 dark:prose-dark ">JAVA</div>
+            <SkillIcon kind="intermediate" size={10} />
+          </div>
+          <div className="flex px-5 pb-4 transition ease-in-out hover:scale-110">
+            <SkillIcon kind="python" size={10} />
+            <div className="pl-2 pr-2 pt-2 dark:prose-dark ">Python</div>
+            <SkillIcon kind="intermediate" size={10} />
+          </div>
+          <div className="flex px-5 pb-4 transition ease-in-out hover:scale-110">
+            <SkillIcon kind="html" size={10} />
+            <div className="pl-2 pr-2 pt-2 dark:prose-dark ">HTML</div>
+            <SkillIcon kind="beginner" size={10} />
+          </div>
+          <div className="flex px-5 pb-4 transition ease-in-out hover:scale-110">
+            <SkillIcon kind="nextJS" size={10} />
+            <div className="pl-2 pr-2 pt-2 dark:prose-dark ">Next.js</div>
+            <SkillIcon kind="beginner" size={10} />
+          </div>
+          <div className="flex px-5 pb-4 transition ease-in-out hover:scale-110">
+            <SkillIcon kind="tailwindCSS" size={10} />
+            <div className="pl-2 pr-2 pt-2 dark:prose-dark ">Tailwind CSS</div>
+            <SkillIcon kind="beginner" size={10} />
+          </div>
+          <div className="flex px-5 pb-4 transition ease-in-out hover:scale-110">
+            <SkillIcon kind="vb" size={10} />
+            <div className="pl-2 pr-2 pt-2 dark:prose-dark ">Visual Basic</div>
+            <SkillIcon kind="beginner" size={10} />
+          </div>
+          <div className="flex px-5 pb-4 transition ease-in-out hover:scale-110">
+            <SkillIcon kind="typeScript" size={10} />
+            <div className="pl-2 pr-2 pt-2 dark:prose-dark ">Type Script</div>
+            <SkillIcon kind="beginner" size={10} />
+          </div>
+        </div>
 
+        <div className="space-y-2 pt-6 pb-8 md:space-y-5">
+          <h1 className="text-xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-xl sm:leading-10 md:text-4xl md:leading-14">
+            Programs
+          </h1>
+        </div>
+        <div className="flex flex-wrap pt-5">
+          <div className="flex px-5 pb-4 transition ease-in-out hover:scale-110 ">
+            <SkillIcon kind="unity" size={10} />
+            <div className="pl-2 pr-2 pt-2 dark:prose-dark">Unity</div>
+            <SkillIcon kind="advanced" size={10} />
+          </div>
+          <div className="flex px-5 pb-4 transition ease-in-out hover:scale-110">
+            <SkillIcon kind="unrealEngine" size={10} />
+            <div className="pl-2 pr-2 pt-2 dark:prose-dark ">Unreal Engine</div>
+            <SkillIcon kind="intermediate" size={10} />
+          </div>
+          <div className="flex px-5 pb-4 transition ease-in-out hover:scale-110">
+            <SkillIcon kind="godot" size={10} />
+            <div className="pl-2 pr-2 pt-2 dark:prose-dark ">GODOT</div>
+            <SkillIcon kind="intermediate" size={10} />
+          </div>
+          <div className="flex px-5 pb-4 transition ease-in-out hover:scale-110">
+            <SkillIcon kind="androidStudio" size={10} />
+            <div className="pl-2 pr-2 pt-2 dark:prose-dark ">Android Studio</div>
+            <SkillIcon kind="intermediate" size={10} />
+          </div>
+          <div className="flex px-5 pb-4 transition ease-in-out hover:scale-110">
+            <SkillIcon kind="visualStudio" size={10} />
+            <div className="pl-2 pr-2 pt-2 dark:prose-dark ">Visual Studio</div>
+            <SkillIcon kind="advanced" size={10} />
+          </div>
+        </div>
       </div>
-
-      
     </>
   )
 }
