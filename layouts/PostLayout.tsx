@@ -129,7 +129,6 @@ export default function PostLayout({ content, authorDetails, next, prev, childre
                 {tags && (
                   <div>
                     <div className="my-4 mr-8 grid items-start gap-10 transition duration-1000 hover:scale-110">
-                      <Link href={`/blog/${next.slug}`}>
                         <div className="group relative">
                           <div className="animate-tilt absolute -inset-0.5 rounded-lg bg-gradient-to-r from-cyan-300 to-cyan-300 opacity-50 blur transition duration-1000 group-hover:opacity-100 group-hover:duration-200"></div>
                           <span className="relative flex items-center divide-x divide-gray-600 rounded-lg bg-white px-7 py-4 leading-none dark:bg-black">
@@ -150,7 +149,6 @@ export default function PostLayout({ content, authorDetails, next, prev, childre
                             </span>
                           </span>
                         </div>
-                      </Link>
                     </div>
                   </div>
                 )}
@@ -159,7 +157,7 @@ export default function PostLayout({ content, authorDetails, next, prev, childre
                     {prev && (
                       <div>
                         <div className="my-4 mr-8 grid items-start gap-10 transition duration-1000 hover:scale-110">
-                          <Link href={`/blog/${next.slug}`}>
+                          <Link href={`/blog/${prev.slug}`}>
                             <div className="group relative">
                               <div className="animate-tilt absolute -inset-0.5 rounded-lg bg-gradient-to-r from-cyan-300 to-cyan-300 opacity-50 blur transition duration-1000 group-hover:opacity-100 group-hover:duration-200"></div>
                               <span className="relative flex items-center divide-x divide-gray-600 rounded-lg bg-white px-7 py-4 leading-none dark:bg-black">

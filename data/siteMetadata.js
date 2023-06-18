@@ -1,10 +1,10 @@
 const siteMetadata = {
-  title: 'Reuben Miller',
+  title: 'Reuben Miller - Game Programmer Portfolio',
   author: 'Reuben Miller',
   headerTitle: 'Reuben Miller',
-  description: 'TEST DESCRIPTION',
+  description: 'Reuben Millers, personal website, portfolio & blog',
   language: 'en-us',
-  theme: 'system', // system, dark or light
+  theme: 'dark', // system, dark or light
   siteUrl: 'https://tailwind-nextjs-starter-blog.vercel.app',
   siteRepo: 'https://github.com/timlrx/tailwind-nextjs-starter-blog',
   siteLogo: '/static/images/logo.png',
