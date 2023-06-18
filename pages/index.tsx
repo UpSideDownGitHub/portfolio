@@ -51,9 +51,11 @@ export default function Home({ posts }: InferGetStaticPropsType<typeof getStatic
               />
             </Link>
           </div>
-          <div className="flex-auto p-6 flex flex-wrap">
-            <h1 className="flex-auto text-lg leading-7 text-gray-500 dark:text-gray-400">
-              Hello, i am Reuben Miller
+          <div className="flex-auto p-6 mt-10 flex flex-wrap">
+            <h1 className="flex-auto text-xl leading-7 text-black dark:text-white">
+              Hello, i am Reuben Miller, a 3rd year Games Programming student at the University of Northampton, looking
+              to become a Gameplay/AI programmer in the future, this website contains, the projects i have worked on, 
+              my personal blog, and a breif portfolio. 
             </h1>
           </div>
         </div>
