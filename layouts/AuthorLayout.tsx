@@ -20,7 +20,7 @@ export default function AuthorLayout({ children, content }: Props) {
         <div className="space-y-2 pt-6 pb-8 md:space-y-5">
           <h1
             className="text-3xl font-extrabold leading-9 tracking-tight inline-block bg-clip-text text-transparent 
-        bg-gradient-to-r from-teal-600 via-cyan-300 to-sky-700 sm:text-4xl md:text-6xl md:leading-14"
+            bg-gradient-to-r from-teal-600 via-cyan-300 to-sky-700 sm:text-4xl md:text-6xl md:leading-14"
           >
             About
           </h1>
