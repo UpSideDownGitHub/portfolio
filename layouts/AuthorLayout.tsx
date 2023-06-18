@@ -38,8 +38,8 @@ export default function AuthorLayout({ children, content }: Props) {
                     <Image
                       src={avatar}
                       alt="avatar"
-                      width="192px"
-                      height="192px"
+                      width="5900px"
+                      height="6377px"
                       className="h-48 w-48  rounded-full"
                     />
                   </div>

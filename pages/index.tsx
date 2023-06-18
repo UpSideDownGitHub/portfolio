@@ -45,8 +45,8 @@ export default function Home({ posts }: InferGetStaticPropsType<typeof getStatic
               <Image
                 src="/static/images/Face.jpg"
                 alt="avatar"
-                width="192px"
-                height="192px"
+                width="5900px"
+                height="6377px"
                 className="h-48 w-48 rounded-full"
               />
             </Link>
