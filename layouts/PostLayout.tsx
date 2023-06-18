@@ -72,57 +72,85 @@ export default function PostLayout({ content, authorDetails, next, prev, childre
                 <ul className="flex justify-center space-x-8 sm:space-x-12 xl:block xl:space-x-0 xl:space-y-8">
                   {authorDetails.map((author) => (
                     <li className="flex items-center space-x-2" key={author.name}>
-                      {author.avatar && (
-                        <Image
-                          src={author.avatar}
-                          width="38px"
-                          height="38px"
-                          alt="avatar"
-                          className="h-10 w-10 rounded-full"
-                        />
-                      )}
-                      <dl className="whitespace-nowrap text-sm font-medium leading-5">
-                        <dt className="sr-only">Name</dt>
-                        <dd className="text-gray-900 dark:text-gray-100">{author.name}</dd>
-                        <dt className="sr-only">Twitter</dt>
-                        <dd>
+                      <div>
+                        <div className="my-4 mr-8 grid items-start gap-10 transition duration-1000 hover:scale-110">
                           {author.twitter && (
                             <Link
                               href={author.twitter}
                               className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
                             >
-                              {author.twitter.replace('https://twitter.com/', '@')}
+                              <div className="group relative">
+                                <div className="animate-tilt absolute -inset-0.5 rounded-lg bg-gradient-to-r from-cyan-300 to-cyan-300 opacity-50 blur transition duration-1000 group-hover:opacity-100 group-hover:duration-200"></div>
+                                <span className="relative flex items-center divide-x divide-gray-600 rounded-lg bg-white px-7 py-4 leading-none dark:bg-black">
+                                  <span className="flex items-center ">
+                                    <div className="flex">
+                                      {author.avatar && (
+                                        <Image
+                                          src={author.avatar}
+                                          width="38px"
+                                          height="38px"
+                                          alt="avatar"
+                                          className="h-10 w-10 rounded-full"
+                                        />
+                                      )}
+                                      <dl className="pl-2 whitespace-nowrap text-sm font-medium leading-5">
+                                        <dt className="sr-only">Name</dt>
+                                        <dd
+                                          className="text-3xl font-extrabold leading-9 tracking-tight inline-block bg-clip-text text-transparent 
+    bg-gradient-to-r from-cyan-300 to-sky-700 sm:text-4xl md:text-base"
+                                        >
+                                          {author.name}
+                                        </dd>
+                                        <dt className="sr-only">Twitter</dt>
+                                        <dd>
+                                          {author.twitter.replace('https://twitter.com/', '@')}
+                                        </dd>
+                                      </dl>
+                                    </div>
+                                  </span>
+                                </span>
+                              </div>
                             </Link>
                           )}
-                        </dd>
-                      </dl>
+                        </div>
+                      </div>
                     </li>
                   ))}
                 </ul>
               </dd>
             </dl>
+
             <div className="divide-y divide-gray-200 dark:divide-gray-700 xl:col-span-3 xl:row-span-2 xl:pb-0">
               <div className="prose max-w-none pt-10 pb-8 dark:prose-dark">{children}</div>
-              <div className="pt-6 pb-6 text-sm text-gray-700 dark:text-gray-300">
-                <Link href={discussUrl(slug)} rel="nofollow">
-                  {'Discuss on Twitter'}
-                </Link>
-                {` • `}
-                <Link href={editUrl(slug)}>{'View on GitHub'}</Link>
-              </div>
-              <Comments frontMatter={content} />
             </div>
+
             <footer>
               <div className="divide-gray-200 text-sm font-medium leading-5 dark:divide-gray-700 xl:col-start-1 xl:row-start-2 xl:divide-y">
                 {tags && (
-                  <div className="py-4 xl:py-8">
-                    <h2 className="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">
-                      Tags
-                    </h2>
-                    <div className="flex flex-wrap">
-                      {tags.map((tag) => (
-                        <Tag key={tag} text={tag} />
-                      ))}
+                  <div>
+                    <div className="my-4 mr-8 grid items-start gap-10 transition duration-1000 hover:scale-110">
+                      <Link href={`/blog/${next.slug}`}>
+                        <div className="group relative">
+                          <div className="animate-tilt absolute -inset-0.5 rounded-lg bg-gradient-to-r from-cyan-300 to-cyan-300 opacity-50 blur transition duration-1000 group-hover:opacity-100 group-hover:duration-200"></div>
+                          <span className="relative flex items-center divide-x divide-gray-600 rounded-lg bg-white px-7 py-4 leading-none dark:bg-black">
+                            <span className="flex items-center space-x-5">
+                              <div className="">
+                                <h2
+                                  className="text-3xl font-extrabold leading-9 tracking-tight inline-block bg-clip-text text-transparent 
+    bg-gradient-to-r from-cyan-300 to-sky-700 sm:text-4xl md:text-lg"
+                                >
+                                  Tags
+                                </h2>
+                                <div className="flex flex-wrap">
+                                  {tags.map((tag) => (
+                                    <Tag key={tag} text={tag} />
+                                  ))}
+                                </div>
+                              </div>
+                            </span>
+                          </span>
+                        </div>
+                      </Link>
                     </div>
                   </div>
                 )}
@@ -130,33 +158,74 @@ export default function PostLayout({ content, authorDetails, next, prev, childre
                   <div className="flex justify-between py-4 xl:block xl:space-y-8 xl:py-8">
                     {prev && (
                       <div>
-                        <h2 className="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">
-                          Previous Article
-                        </h2>
-                        <div className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400">
-                          <Link href={`/blog/${prev.slug}`}>{prev.title}</Link>
+                        <div className="my-4 mr-8 grid items-start gap-10 transition duration-1000 hover:scale-110">
+                          <Link href={`/blog/${next.slug}`}>
+                            <div className="group relative">
+                              <div className="animate-tilt absolute -inset-0.5 rounded-lg bg-gradient-to-r from-cyan-300 to-cyan-300 opacity-50 blur transition duration-1000 group-hover:opacity-100 group-hover:duration-200"></div>
+                              <span className="relative flex items-center divide-x divide-gray-600 rounded-lg bg-white px-7 py-4 leading-none dark:bg-black">
+                                <span className="flex items-center space-x-5">
+                                  <div className="">
+                                    <h2
+                                      className="text-3xl font-extrabold leading-9 tracking-tight inline-block bg-clip-text text-transparent 
+    bg-gradient-to-r from-cyan-300 to-sky-700 sm:text-4xl md:text-lg"
+                                    >
+                                      Previous Article
+                                    </h2>
+                                    <div className="text-primary-500">
+                                      <Link href={`/blog/${prev.slug}`}>{prev.title}</Link>
+                                    </div>
+                                  </div>
+                                </span>
+                              </span>
+                            </div>
+                          </Link>
                         </div>
                       </div>
                     )}
                     {next && (
                       <div>
-                        <h2 className="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">
-                          Next Article
-                        </h2>
-                        <div className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400">
-                          <Link href={`/blog/${next.slug}`}>{next.title}</Link>
+                        <div className="my-4 mr-8 grid items-start gap-10 transition duration-1000 hover:scale-110">
+                          <Link href={`/blog/${next.slug}`}>
+                            <div className="group relative">
+                              <div className="animate-tilt absolute -inset-0.5 rounded-lg bg-gradient-to-r from-cyan-300 to-cyan-300 opacity-50 blur transition duration-1000 group-hover:opacity-100 group-hover:duration-200"></div>
+                              <span className="relative flex items-center divide-x divide-gray-600 rounded-lg bg-white px-7 py-4 leading-none dark:bg-black">
+                                <span className="flex items-center space-x-5">
+                                  <div className="">
+                                    <h2
+                                      className="text-3xl font-extrabold leading-9 tracking-tight inline-block bg-clip-text text-transparent 
+    bg-gradient-to-r from-cyan-300 to-sky-700 sm:text-4xl md:text-lg"
+                                    >
+                                      Next Article
+                                    </h2>
+                                    <div className="text-primary-500">{next.title}</div>
+                                  </div>
+                                </span>
+                              </span>
+                            </div>
+                          </Link>
                         </div>
                       </div>
                     )}
                   </div>
                 )}
               </div>
-              <div className="pt-4 xl:pt-8">
+              <div>
                 <Link
                   href="/blog"
                   className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
                 >
-                  &larr; Back to the blog
+                  <div className=" my-4 mr-8 grid items-start gap-10 transition duration-1000 hover:scale-110">
+                    <div className="group relative">
+                      <div className="animate-tilt absolute -inset-0.5 rounded-lg bg-gradient-to-r from-cyan-300 to-cyan-300 opacity-50 blur transition duration-1000 group-hover:opacity-100 group-hover:duration-200"></div>
+                      <span className="relative flex items-center divide-x divide-gray-600 rounded-lg bg-white px-7 py-4 leading-none dark:bg-black">
+                        <span className="flex items-center space-x-5">
+                          <div className="flex">
+                            <div className="text-primary-500 ">&larr; Back to the blog</div>
+                          </div>
+                        </span>
+                      </span>
+                    </div>
+                  </div>
                 </Link>
               </div>
             </footer>
