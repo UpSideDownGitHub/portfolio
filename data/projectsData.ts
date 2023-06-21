@@ -15,7 +15,7 @@ const projectsData = [
     imgSrc: '/static/images/projects/website.png',
     github: 'https://github.com/UpSideDownGitHub/portfolio',
     //itch: 'https://kryptedstudios.itch.io/space-yam',
-    //blog: '',
+    blog: '/blog/website-release',
     tools: ['Next.js', 'TailwindCSS', 'MDX', 'TSX'],
   },
   {
@@ -29,7 +29,7 @@ const projectsData = [
     imgSrc: '/static/images/projects/pamfest.png',
     github: 'https://github.com/UpSideDownGitHub/pamfest',
     itch: 'https://upsidedownitch.itch.io/bernies-bulldog',
-    //blog: '',
+    blog: '/blog/pam-fest-release',
     tools: ['C#', 'Unity', 'Group'],
   },
   {
@@ -42,7 +42,7 @@ const projectsData = [
     imgSrc: '/static/images/projects/Space Yam.png',
     github: 'https://github.com/UpSideDownGitHub/Space-Yam',
     itch: 'https://kryptedstudios.itch.io/space-yam',
-    //blog: '',
+    blog: '/blog/space-yam-release',
     tools: ['Unity', 'C#', 'Group'],
   },
   {
@@ -74,7 +74,7 @@ const projectsData = [
     imgSrc: '/static/images/projects/Galaxy Survivor.png',
     //github: 'https://github.com/UpSideDownGitHub/MobileAppas2',
     itch: 'https://upsidedownitch.itch.io/galaxy-survivor',
-    //blog: '',
+    blog: '/blog/galaxy-survivor-release',
     tools: ['Unity', 'C#', 'Krita'],
   },
   {
@@ -117,7 +117,7 @@ const projectsData = [
     imgSrc: '/static/images/projects/lengthy.png',
     github: 'https://github.com/UpSideDownGitHub/Lengthy',
     //itch: 'https://upsidedownitch.itch.io/coldcurve-denham',
-    //blog: '',
+    blog: '/blog/lengthy-release',
     tools: ['C#', '.NET', 'Visual Studio', 'Translation', 'Compilation'],
   },
   {
@@ -190,7 +190,7 @@ const projectsData = [
     imgSrc: '/static/images/projects/Mermorsium.png',
     //github: '',
     itch: 'https://upsidedownitch.itch.io/memorsium',
-    //blog: '',
+    blog: '/blog/memorsium-release',
     tools: ['Unity', 'C#', 'Solo'],
   },
   {
@@ -201,7 +201,7 @@ const projectsData = [
     imgSrc: '/static/images/projects/inconspicuious.png',
     //github: '',
     itch: 'https://upsidedownitch.itch.io/inconspicuous',
-    //blog: '',
+    blog: '/blog/inconspicuous-release',
     tools: ['Unity', 'C#', 'Solo'],
   },
 ]
